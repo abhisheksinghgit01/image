@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+.upload-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between buttons */
+    align-items: center; /* Align buttons vertically center */
+    margin-top: 20px; /* Space above the button container */
+    padding: 0 20px; /* Padding for buttons */
+    margin-bottom: 10px;
+}
+
+/* Style for the Choose File button */
+#chooseButton {
+    margin-right: 10px;
+    background-color: crimson; /* Space between the two buttons */
+}
+#chooseButton:hover{
+    background-color: rgb(134, 11, 36) ;
+}
+
+/* Style for the Upload Image button */
+.upload-button {
+    margin-left: 10px; /* Space between the two buttons */
+}
+
+
+
+.slider {
+    width: 23%; /* Set fixed container width */
+    height: auto; /* Set height to auto to adjust for image height */
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #ee6307;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    text-align: center; /* Center images horizontally */
+}
+
+.slide img {
+    width: 100%; /* Image width matches the container */
+    height: 100%; /* Set height to auto for full display */
+    object-fit: contain; /* Ensure the image is fully displayed */
+    border-radius: 10px;
+}
+.slide img {
+    cursor: pointer; /* Change cursor to pointer for clickable images */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Button container for horizontal layout */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Space between image and buttons */
+    padding: 0 20px; /* Padding for buttons */
+}
+
+/* Previous, Play/Pause, and Next Buttons */
+button {
+    background-color: #004aad; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+.play{
+    border-radius: 100px;
+    width: 100px;
+}
+.prev{
+    background-color: #d8b908;
+}
+.prev:hover{
+    background-color: #77d808;
+}
+.next{
+    background-color: #d8b908;
+}
+.next:hover{
+    background-color: #77d808;
+}
+button:hover {
+    background-color: #003594; /* Darker shade on hover */
+}
+.thumbnail-nav {
+    display: flex;
+    justify-content: center; /* Center the thumbnails */
+    margin-top: 10px; /* Space above the thumbnails */
+    overflow-x: auto; /* Allow horizontal scrolling if too many thumbnails */
+    padding: 10px 0; /* Padding for top and bottom */
+}
+
+.thumbnail-nav img {
+    width: 60px; /* Thumbnail width */
+    height: 60px; /* Thumbnail height */
+    margin: 0 5px; /* Space between thumbnails */
+    border: 2px solid transparent; /* Border for inactive thumbnails */
+    border-radius: 5px; /* Rounded corners for thumbnails */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+.thumbnail-nav img.active {
+    border-color: #004aad; /* Active thumbnail border color */
+}
+
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+    .button-container {
+        padding: 0 10px;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .slider {
+        width: 80%; /* Set container width to 80% for mobile view */
+        height: auto; /* Set height to auto for mobile */
+        border-radius: 5px;
+    }
+    
+    .slide img {
+        width: 100%; /* Image width matches the container */
+        height: auto; /* Set height to auto for mobile */
+        border-radius: 5px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
